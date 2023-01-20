@@ -8,8 +8,8 @@ const FeatureCard = ({ url, style }) => {
                     <img src={url} alt="card" />
                 </div>
                 <div>
-                    <h1>Simple money tracker</h1>
-                    <p>It takes seconds to record daily transactions. Put them into clear and visualized categories such as Expense: Food, Shopping or Income: Salary, Gift.</p>
+                    <h1>Lorem ipsum dolor sit</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
             </div>
         </div>

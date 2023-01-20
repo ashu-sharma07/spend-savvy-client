@@ -38,9 +38,9 @@ const Home = () => {
                 <div>
                     <div className='cards'>
                         <Card url={one} txt={"100% Secured Data"} />
-                        <Card url={two} txt={"1 Million+ Users"} />
-                        <Card url={three} txt={"100K+ 5-star Reviews"} />
-                        <Card url={four} txt={"App of the Day"} />
+                        <Card url={two} txt={"Friendly Users"} />
+                        <Card url={three} txt={"Reviews"} />
+                        <Card url={four} txt={"ML"} />
                     </div>
                 </div>
                 <div style={{ marginTop: 200 }}>

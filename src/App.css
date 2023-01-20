@@ -279,6 +279,9 @@ header a {
   background-color: #e5e5e5;
   outline: none;
 }
+.authCard input:hover{
+  border: 1px solid var(--background1);
+}
 .authCard  .forgot{
   color: var(--color);
   text-align: right;
