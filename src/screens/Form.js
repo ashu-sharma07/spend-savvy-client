@@ -27,7 +27,7 @@ const Form = () => {
             <div className='formMain'>
                 <div>
                     <div className='formContainer'>
-                        <h2 style={{ textAlign: 'left', width: '100%', color: 'rgb(121,121,121)' }}>Welcome to the Budget Building Adventure!</h2>
+                        <h2 style={{ textAlign: 'center', width: '100%', color: 'rgb(121,121,121)' }}>Welcome to the Budget Building Adventure!</h2>
                         <div style={{ borderTop: '1px solid #e5e5e5', width: '100%', marginBottom: 50 }}></div>
                         <div className='formField'>
                             <div className='label'>
