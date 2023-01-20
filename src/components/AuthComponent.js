@@ -22,14 +22,15 @@ const AuthComponent = ({
 }) => {
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#ebebeb', position: 'relative' }}>
-            <div className='loginHeader'>
-                <img className='logo' src={Logo} />
+            <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}} className='loginHeader'>
+                <img style={{width:100}} className='logo' src={Logo} alt="logo" />
+                <h2 style={{marginTop:20}} className='logo'>Spend Savvy</h2>
             </div>
             <div style={{marginTop:20}} className='authCard'>
                 <div>
                     <h1>{title}</h1>
                     <div>
-                        <h4>Using Money Lover account</h4>
+                        <h4>Using Spend Savvy account</h4>
                         {
                             name ?
                                 <input style={name} placeholder='Name' type={"text"} />

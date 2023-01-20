@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
+import BarChart from './screens/BarChart';
 import Dashboard from './screens/Dashboard';
 import Forgot from './screens/Forgot';
 import Form from './screens/Form';
@@ -20,12 +21,12 @@ function App() {
         {user ? <Route path='/register' element={<Navigate to="/dashboard" replace />} /> :
           <Route path='/register' element={<Register />} />
         }
-        {/* <Route path='/login' element={<Login/>}/>
-        <Route path='/register' element={<Register/>}/> */}
         <Route path='/forgot' element={<Forgot/>}/>
         <Route path='/reset' element={<Reset/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/dashboard/chart' element={<Dashboard/>}/>
         <Route path='/form' element={<Form/>}/>
+        <Route path='/chart' element={<BarChart/>}/>
       </Routes>
     </div>
   );

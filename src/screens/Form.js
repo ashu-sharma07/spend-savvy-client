@@ -1,8 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import Logo from "../assets/form/logo.png"
 import { useNavigate } from 'react-router-dom'
+import api from '../api/api';
 const Form = () => {
     const navigate = useNavigate();
+    const token = JSON.parse(localStorage.getItem("token"));
     const gen = useRef();
     const year = useRef();
     const scholar = useRef();
@@ -17,13 +19,36 @@ const Form = () => {
     const sub = useRef();
     const handleClick = async () => {
         console.log("clicked");
-        console.log(gen.current.value, year.current.value, scholar.current.value,living.current.value,part.current.value,transport.current.value,age)
-        navigate("/dashboard");
+        console.log(gen.current.value, year.current.value, scholar.current.value, living.current.value, part.current.value, transport.current.value, age)
+        try {
+            const res = await api.post("/pref", {
+                gender: gen.current.value,
+                transporting: transport.current.value,
+                age: age.current.value,
+                smoking: smoke.current.value,
+                studyYear: year.current.value,
+                drinks: drinks.current.value,
+                living: living.current.value,
+                hobbies: games.current.value,
+                scholarship: scholar.current.value,
+                cosmetics: consmetics.current.value,
+                jobs: part.current.value,
+                sub: sub.current.value
+            },
+                { headers: { token: token } }
+            )
+            console.log(res.data);
+            localStorage.setItem("value",JSON.stringify(res.data.messege))
+            navigate("/dashboard");
+        } catch (error) {
+            console.log(error);
+        }
     }
     return (
         <div style={{ position: 'relative' }}>
-            <div className='loginHeader'>
-                <img className='logo' src={Logo} />
+            <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}} className='loginHeader'>
+                <img style={{width:100}} className='logo' src={Logo} alt="logo" />
+                <h2 style={{marginTop:20}} className='logo'>Spend Savvy</h2>
             </div>
             <div className='formMain'>
                 <div>

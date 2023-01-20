@@ -28,17 +28,17 @@ body{
 .body{
   margin: 0 100px;
 }
-header {
+.header {
   height: 20vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   
 }
-header h2{
+.header h2{
   color: var(--color);
 }
-header a {
+.header a {
   color: black;
   text-decoration: none;
   font-weight: 500;
@@ -56,11 +56,11 @@ header a {
 .hero h1,.hero-span{
   color: var(--color);
   font-size: 64px;
-  font-weight: 400;
+  font-weight: 500;
 }
 .hero h2{
   font-size: 64px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--color2);
 }
 
@@ -234,14 +234,18 @@ header a {
 
 /* Login page Css  */
 .loginHeader{
-  background-color: var(--background5);
+  background-color: var(--background1);
+  /* opacity: 0.8; */
+  /* background-color: #ebebeb; */
+  /* background-color: white; */
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 45vh;
 }
 .logo{
-  margin-top: -60px;
+  margin-top: -50px;
+  font-size: 30px;
 }
 .loginHeader h2{
   color: white;
@@ -311,6 +315,7 @@ header a {
 /* Form css  */
 .formMain{
   background-color: #ebebeb;
+  /* background-color: white; */
   padding:120px;
   height: 70vh;
 }
@@ -366,4 +371,116 @@ select{
   outline: none;
   border-radius: 5px;
   font-size: 16px;
+}
+
+
+/* dashboard css start  */
+.dashHeader{
+  background-color: white;
+  min-height:140vh;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.dashHeader .navDiv{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashHeader .nav{
+  display: flex;
+  gap: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+.dashboardMain{
+  margin:20px
+}
+
+.btn2{
+  /* margin-top: 40px; */
+  border-radius: 5px;
+  border: 1px solid var(--color);
+  background-color: var(--background1);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.dashboardCard{
+  height:200px;
+  width: 300px;
+  background-color: #4844A7;
+  border-radius: 5px;
+  position: relative;
+  padding: 15px;
+  overflow: hidden;
+}
+.dashboardCard p{
+  color: white;
+
+}
+.dashboardCard h2{
+  color: white;
+}
+.dashboardCard h5{
+  color: white;
+}
+.dashboardCard .pattern{
+  position: absolute;
+  right: 0;
+  bottom:0
+}
+.dashboardCard2{
+  height:200px;
+  width: 300px;
+  background-color: #F9CE68;
+  border-radius: 5px;
+  position: relative;
+  padding: 15px;
+  overflow: hidden;
+}
+.dashboardCard2 p{
+  color: white;
+
+}
+.dashboardCard2 h2{
+  color: white;
+}
+.dashboardCard2 h5{
+  color: white;
+}
+.dashboardCard2 .pattern{
+  position: absolute;
+  right: 0;
+  bottom:0
+}
+
+.expense{
+  margin-top: 20px;
+  border-radius: 5px;
+  width:690px;
+  height:200px;
+  background-color: white;
+}
+
+.pieChart{
+  background-color: white;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  width: 80%;
+}
+
+.navDiv p{
+  color: var(--color);
 }

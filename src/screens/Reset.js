@@ -24,7 +24,7 @@ const Reset = () => {
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#ebebeb', position: 'relative' }}>
             <div className='loginHeader'>
-            <img className='logo' src={Logo} />
+            <img className='logo' src={Logo} alt="Logo"/>
             </div>
             <div style={{marginTop:20}} className='authCard'>
                 <div>

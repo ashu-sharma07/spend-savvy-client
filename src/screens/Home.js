@@ -22,12 +22,15 @@ import Logo from "../assets/form/logo.png"
 const Home = () => {
     return (
         <div>
-            <div  className='body'>
-                <header>
-                <img style={{width:300}} src={Logo} />
+            <div className='body'>
+                <header className='header'>
                     <div>
-                        <Link to="/ ">About</Link>
-                        <Button url="/login" title="Login" style={{ padding: '10px 20px',margin:'0 20px',background:'#2db84c',color:'white' }}/>
+                        <img style={{ width: 60 }} src={Logo} alt="logo" />
+                        <h2 style={{marginLeft:'70px'}} className='logo'>Spend Savvy</h2>
+                    </div>
+                    <div>
+                        {/* <Link to="/ ">About</Link> */}
+                        <Button url="/login" title="Login" style={{ padding: '10px 20px', margin: '0 20px', background: '#2db84c', color: 'white' }} />
                     </div>
                 </header>
                 <div className='hero'>
