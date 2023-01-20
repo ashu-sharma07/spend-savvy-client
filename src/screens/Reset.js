@@ -1,6 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import api from '../api/api';
 
 const Reset = () => {
+    const navigate = useNavigate();
+    const [otp,setOtp] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const handleClick = async () => {
+        try {
+            const res = await api.post("/password/reset", {
+                resetPasswordOtp:otp,
+                password,
+                confirmPassword
+            })
+            alert("Password Changed Successfully")
+            navigate("/login");
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#ebebeb', position: 'relative' }}>
             <div className='loginHeader'>
@@ -11,11 +30,11 @@ const Reset = () => {
                     <h1>Reset Password</h1>
                     <div>
                         <h4>Using Money Lover account</h4>
-                        <input placeholder='OTP' type={"text"} />
-                        <input placeholder='Password' type={"password"} />
+                        <input value={otp} onChange={(e)=>setOtp(e.target.value)} placeholder='OTP' type={"text"} />
+                        <input value={password} onChange={(e)=>setPassword(e.target.value)} placeholder='Password' type={"password"} />
                         <br />
-                        <input placeholder='Confirm password' type={"password"} />
-                        <button>Reset password</button>
+                        <input value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)} placeholder='Confirm password' type={"password"} />
+                        <button onClick={handleClick}>Reset password</button>
                     </div>
                 </div>
             </div>

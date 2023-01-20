@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import api from '../api/api';
 import AuthComponent from '../components/AuthComponent'
 
 const Register = () => {
+    const navigate = useNavigate();
     const [fullName,setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -15,6 +17,8 @@ const Register = () => {
                 password
             })
             console.log(res);
+            localStorage.setItem("token",JSON.stringify(res.data.token));
+            navigate("/dashboard");
         } catch (error) {
             console.log(error);
         }
