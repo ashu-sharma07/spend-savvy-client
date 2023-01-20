@@ -25,7 +25,7 @@ const Home = () => {
                     <h2>Spend Savvy</h2>
                     <div>
                         <Link to="/ ">About</Link>
-                        <Button title="Login" style={{ padding: '10px 20px',margin:'0 20px',background:'#2db84c',color:'white' }}/>
+                        <Button url="/login" title="Login" style={{ padding: '10px 20px',margin:'0 20px',background:'#2db84c',color:'white' }}/>
                     </div>
                 </header>
                 <div className='hero'>
