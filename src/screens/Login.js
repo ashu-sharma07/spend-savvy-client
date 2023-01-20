@@ -21,6 +21,10 @@ const Login = () => {
                 console.log(res);
                 localStorage.setItem("token", JSON.stringify(res.data.token));
                 localStorage.setItem("value", JSON.stringify(res.data.user.pBudget))
+                localStorage.setItem("name", JSON.stringify(res.data.user.name))
+                localStorage.setItem("current", JSON.stringify(res.data.user.currentBalance))
+                localStorage.setItem("expense", JSON.stringify(res.data.user.totalExpense))
+                localStorage.setItem("income", JSON.stringify(res.data.user.totalIncome))
                 navigate("/dashboard");
             } catch (error) {
                 setLoginErr(true);

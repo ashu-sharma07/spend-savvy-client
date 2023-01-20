@@ -23,6 +23,8 @@ const Register = () => {
                 })
                 console.log(res);
                 localStorage.setItem("token", JSON.stringify(res.data.token));
+                localStorage.setItem("name", JSON.stringify(res.data.user.name))
+                localStorage.setItem("current", JSON.stringify(res.data.user.currentBalance))
                 navigate("/form");
             } catch (error) {
                 setRegisterErr(true);
