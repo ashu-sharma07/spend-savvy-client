@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import api from '../api/api';
+import Logo from "../assets/form/logo.png"
 
 const Reset = () => {
     const navigate = useNavigate();
@@ -23,9 +24,9 @@ const Reset = () => {
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#ebebeb', position: 'relative' }}>
             <div className='loginHeader'>
-                <h2 className='logo'>Spend Savvy</h2>
+            <img className='logo' src={Logo} />
             </div>
-            <div className='authCard'>
+            <div style={{marginTop:20}} className='authCard'>
                 <div>
                     <h1>Reset Password</h1>
                     <div>

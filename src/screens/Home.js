@@ -17,12 +17,14 @@ import four4 from "../assets/home/44.svg";
 import five5 from "../assets/home/55.svg";
 import six6 from "../assets/home/66.svg";
 import Feature from '../components/Feature';
+import Logo from "../assets/form/logo.png"
+
 const Home = () => {
     return (
         <div>
-            <div className='body'>
+            <div  className='body'>
                 <header>
-                    <h2>Spend Savvy</h2>
+                <img style={{width:300}} src={Logo} />
                     <div>
                         <Link to="/ ">About</Link>
                         <Button url="/login" title="Login" style={{ padding: '10px 20px',margin:'0 20px',background:'#2db84c',color:'white' }}/>

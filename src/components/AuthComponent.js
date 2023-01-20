@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Logo from "../assets/form/logo.png"
 
 const AuthComponent = ({
     title,
@@ -22,9 +23,9 @@ const AuthComponent = ({
     return (
         <div style={{ minHeight: '100vh', backgroundColor: '#ebebeb', position: 'relative' }}>
             <div className='loginHeader'>
-                <h2 className='logo'>Spend Savvy</h2>
+                <img className='logo' src={Logo} />
             </div>
-            <div className='authCard'>
+            <div style={{marginTop:20}} className='authCard'>
                 <div>
                     <h1>{title}</h1>
                     <div>
@@ -39,8 +40,8 @@ const AuthComponent = ({
                         <br />
                         <input value={password} onChange={setPassword} style={input} placeholder='Password' type={"password"} />
                         <h4 style={forgot} className='forgot'><Link to="/forgot">Forgot Password</Link></h4>
-                        {forgotErr && <p style={{color:'red'}}>Your email is not registered with us.</p>}
-                        {loginErr && <p style={{color:'red',textAlign:'center'}}>Your email is not registered</p>}
+                        {forgotErr && <p style={{ color: 'red' }}>Your email is not registered with us.</p>}
+                        {loginErr && <p style={{ color: 'red', textAlign: 'center' }}>Your email is not registered</p>}
                         <button onClick={handleClick}>{title}</button>
                         <p style={account}>Don't have an account? <Link to={route}>{dont}</Link></p>
                     </div>

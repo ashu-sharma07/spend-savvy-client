@@ -18,7 +18,7 @@ const Register = () => {
             })
             console.log(res);
             localStorage.setItem("token",JSON.stringify(res.data.token));
-            navigate("/dashboard");
+            navigate("/form");
         } catch (error) {
             console.log(error);
         }
