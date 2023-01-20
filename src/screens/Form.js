@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react'
-import Input from '../components/Input'
 import Logo from "../assets/form/logo.png"
-import Select from '../components/Select'
+import { useNavigate } from 'react-router-dom'
 const Form = () => {
+    const navigate = useNavigate();
     const gen = useRef();
     const year = useRef();
     const scholar = useRef();
@@ -18,6 +18,7 @@ const Form = () => {
     const handleClick = async () => {
         console.log("clicked");
         console.log(gen.current.value, year.current.value, scholar.current.value,living.current.value,part.current.value,transport.current.value,age)
+        navigate("/dashboard");
     }
     return (
         <div style={{ position: 'relative' }}>
