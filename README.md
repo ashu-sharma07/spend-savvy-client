@@ -1,2 +1,2 @@
-# budget-owl-client
-Client Application For Budget Owl 
+# spend-savvy-client
+Client Application For Spend Savvy
