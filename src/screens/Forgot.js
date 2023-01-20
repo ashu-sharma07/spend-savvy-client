@@ -21,7 +21,7 @@ const Forgot = () => {
     return (
         <AuthComponent
             forgot={{ display: 'none' }}
-            title={"Forogot Password"}
+            title={"Forgot Password"}
             dont="Login"
             route="/login" 
             input={{display:'none'}}

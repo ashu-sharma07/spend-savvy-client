@@ -9,7 +9,7 @@ const Reset = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const handleClick = async () => {
         try {
-            const res = await api.post("/password/reset", {
+            await api.post("/password/reset", {
                 resetPasswordOtp:otp,
                 password,
                 confirmPassword
