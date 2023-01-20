@@ -249,7 +249,7 @@ header a {
   min-height: 60vh;
   background-color: var(--background3);
   min-width: 600px;
-  /* padding: 10px; */
+  padding: 10px;
   max-width: 600px;
   border-radius: 10px;
   position: absolute;
@@ -271,8 +271,8 @@ header a {
   font-weight: 400;
 }
 .authCard input{
-  padding: 15px;
-  margin:0 0 10px;
+  padding: 15px 10px;
+  margin:0 0 10px 0;
   width:90%;
   border-radius: 5px;
   border: none;
@@ -293,6 +293,9 @@ header a {
   border: none;
   color: white;
   text-transform: uppercase;
+}
+.authCard button:hover{
+  cursor: pointer;
 }
 .authCard a{
   color: var(--color);
