@@ -5,22 +5,32 @@ import AuthComponent from '../components/AuthComponent'
 
 const Register = () => {
     const navigate = useNavigate();
-    const [fullName,setFullName] = useState('');
+    const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [registerErr,setRegisterErr] = useState(false);
+    const [registerErr2,setRegisterErr2] = useState(false);
     const handleClick = async () => {
-        console.log(fullName,email,password)
-        try {
-            const res = await api.post("/register",{
-                name:fullName,
-                email,
-                password
-            })
-            console.log(res);
-            localStorage.setItem("token",JSON.stringify(res.data.token));
-            navigate("/form");
-        } catch (error) {
-            console.log(error);
+        setRegisterErr(false);
+        setRegisterErr2(false);
+        console.log(fullName, email, password)
+        if (email !== '' || password !== '') {
+            try {
+                const res = await api.post("/register", {
+                    name: fullName,
+                    email,
+                    password
+                })
+                console.log(res);
+                localStorage.setItem("token", JSON.stringify(res.data.token));
+                navigate("/form");
+            } catch (error) {
+                setRegisterErr(true);
+                console.log(error);
+            }
+        }
+        else{
+            setRegisterErr2(true);
         }
     }
     return (
@@ -28,15 +38,17 @@ const Register = () => {
             forgot={{ display: 'none' }}
             title={"register"}
             dont="Login"
-            route="/login" 
+            route="/login"
             fullName={fullName}
-            setFullName={(e)=>setFullName(e.target.value)}
+            registerErr={registerErr}
+            registerErr2={registerErr2}
+            setFullName={(e) => setFullName(e.target.value)}
             email={email}
             setEmail={(e) => setEmail(e.target.value)}
             password={password}
             setPassword={(e) => setPassword(e.target.value)}
             handleClick={handleClick}
-            />
+        />
     )
 }
 

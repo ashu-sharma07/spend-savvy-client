@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Button from '../components/Button'
 import Card from '../components/Card'
 import one from "../assets/home/1.svg";

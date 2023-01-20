@@ -274,6 +274,7 @@ body{
 }
 .authCard h4{
   color: var(--color4);
+  margin-top: -1px;
   text-align: center;
   font-weight: 400;
 }

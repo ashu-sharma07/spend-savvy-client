@@ -7,20 +7,28 @@ const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [loginErr,setLoginErr] = useState(false);
+    const [loginErr, setLoginErr] = useState(false);
+    const [loginErr2, setLoginErr2] = useState(false);
     const handleClick = async () => {
         setLoginErr(false);
-        try {
-            const res = await api.post("/login",{
-                email,
-                password
-            })
-            console.log(res);
-            localStorage.setItem("token",JSON.stringify(res.data.token));
-            navigate("/dashboard");
-        } catch (error) {
-            setLoginErr(true);
-            console.log(error);
+        setLoginErr2(false);
+        if (email !== '' || password !== '') {
+            try {
+                const res = await api.post("/login", {
+                    email,
+                    password
+                })
+                console.log(res);
+                localStorage.setItem("token", JSON.stringify(res.data.token));
+                localStorage.setItem("value", JSON.stringify(res.data.user.pBudget))
+                navigate("/dashboard");
+            } catch (error) {
+                setLoginErr(true);
+                console.log(error);
+            }
+        }
+        else {
+            setLoginErr2(true);
         }
     }
     return (
@@ -30,7 +38,8 @@ const Login = () => {
             route="/register"
             email={email}
             loginErr={loginErr}
-            name={{display:'none'}}
+            loginErr2={loginErr2}
+            name={{ display: 'none' }}
             setEmail={(e) => setEmail(e.target.value)}
             password={password}
             setPassword={(e) => setPassword(e.target.value)}

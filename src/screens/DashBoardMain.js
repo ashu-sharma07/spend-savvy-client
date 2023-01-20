@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Pattern from "../assets/form/Pattern.svg"
 import Pattern2 from "../assets/form/Pattern2.svg"
 import one from "../assets/form/1.svg"
@@ -12,8 +12,14 @@ import BarChart from './BarChart'
 import PieChart from './PieChart'
 
 const DashBoardMain = () => {
+    const navigate = useNavigate();
     const price = JSON.parse(localStorage.getItem("value"));
     console.log(price)
+    const handleLogout = ()=>{
+        localStorage.removeItem("token");
+        localStorage.removeItem("value");
+        navigate("/");
+    }
     return (
         <div style={{ width: '100%' }}>
             <div className='dashboardMain'>
@@ -22,8 +28,9 @@ const DashBoardMain = () => {
                         <p>Welcome back,</p>
                         <h2>Hi, User</h2>
                     </div>
-                    <div>
+                    <div style={{display:'flex',gap:5}}>
                         <Link style={{ padding: '10px 30px' }} className='btn2' to="/dashboard">Add Transactions</Link>
+                        <button onClick={handleLogout} className='btn2' style={{ padding: '10px 30px',background:'#f0fdf8',color:'#2db84c' }}>Logout</button>
                     </div>
                 </div>
                 <div style={{display:'flex',alignItems:'center'}}>

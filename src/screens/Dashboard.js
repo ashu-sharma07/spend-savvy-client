@@ -10,33 +10,33 @@ const Dashboard = () => {
     const location = useLocation();
     const navigate = useNavigate();
     return (
-        <div style={{background:'#ebebeb',minHeight:'100vh',display:'flex'}}>
+        <div style={{ background: '#ebebeb', minHeight: '100vh', display: 'flex' }}>
             <div>
                 <header className='dashHeader'>
-                    <img style={{width:100,marginTop:20}} src={Logo} alt="logo"/>
-                    <h2 style={{marginTop:10,color: '#2db84c'}} className='logo'>Spend Savvy</h2>
-                    <div style={{marginTop:100}} className='navDiv'>
-                        <div onClick={()=>navigate("/dashboard")} className='nav'>
-                            <img style={{color:'black'}} src={Home} alt="Home"/>
-                            <p style={{color: '#2db84c'}}>Home</p>
+                    <img style={{ width: 100, marginTop: 20 }} src={Logo} alt="logo" />
+                    <h2 style={{ marginTop: 10, color: '#2db84c' }} className='logo'>Spend Savvy</h2>
+                    <div style={{ marginTop: 100 }} className='navDiv'>
+                        <div onClick={() => navigate("/dashboard")} className='nav'>
+                            <img style={{ color: 'black' }} src={Home} alt="Home" />
+                            <p style={{ color: '#2db84c' }}>Home</p>
                         </div>
-                        <div onClick={()=>navigate("/dashboard/chart")} className='nav'>
-                            <img style={{color:'black'}} src={Chart} alt="Chart"/>
-                            <p style={{color: 'black'}}>Chart</p>
+                        <div onClick={() => navigate("/dashboard/chart")} className='nav'>
+                            <img style={{ color: 'black' }} src={Chart} alt="Chart" />
+                            <p style={{ color: 'black' }}>Chart</p>
                         </div>
                         <div className='nav'>
-                            <img style={{color:'black'}} src={product} alt="product"/>
-                            <p style={{color: 'black'}}>Product</p>
+                            <img style={{ color: 'black' }} src={product} alt="product" />
+                            <p style={{ color: 'black' }}>Product</p>
                         </div>
                     </div>
                 </header>
             </div>
             {
                 location.pathname === '/dashboard'
-                ?
-                <DashBoardMain/>
-                :
-                <DashboardChart/>
+                    ?
+                    <DashBoardMain />
+                    :
+                    <DashboardChart />
             }
 
         </div>

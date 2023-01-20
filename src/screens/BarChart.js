@@ -22,7 +22,7 @@ const BarChart = (props) => {
         ],
     };
     return (
-        <div style={{ width: 400, padding: 5,backgroundColor:'white',marginTop:20,padding:40 }}>
+        <div style={{ width: 400,backgroundColor:'white',marginTop:20,padding:40 }}>
             <Bar data={data} />
         </div>
     );

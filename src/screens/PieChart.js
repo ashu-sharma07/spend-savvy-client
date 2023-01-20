@@ -6,7 +6,7 @@ import { Doughnut } from "react-chartjs-2";
 
 
 const PieChart = (props) => {
-    const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    // const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const data = {
         labels: [],
 
@@ -22,7 +22,7 @@ const PieChart = (props) => {
         ],
     };
     return (
-        <div style={{ width: 300, padding: 5, marginTop: 20, padding: 40 }}>
+        <div style={{ width: 300, marginTop: 20, padding: 40 }}>
             <Doughnut data={data} />
             <div>
                 <p>Ocverall Spending</p>
