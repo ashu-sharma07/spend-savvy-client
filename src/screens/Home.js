@@ -43,14 +43,14 @@ const Home = () => {
                     <div className='cards'>
                         <Card url={one} txt={"100% Secured Data"} />
                         <Card url={two} txt={"User Friendly"} />
-                        <Card url={three} txt={"Reviews"} />
-                        <Card url={four} txt={"ML"} />
+                        <Card url={three} txt={"Expense Tracker"} />
+                        <Card url={four} txt={"AI Powered"} />
                     </div>
                 </div>
                 <div style={{ marginTop: 200 }}>
-                    <FeatureCard url={tran} />
-                    <FeatureCard url={budget} />
-                    <FeatureCard url={report} />
+                    <FeatureCard url={tran} desc="Track your transactions like a detective on the hunt for clues. Each purchase is a lead that, when pieced together, creates a clear picture of your financial behavior. " title="Track your transactions"/>
+                    <FeatureCard style={{flexDirection:'row-reverse'}} url={budget} desc="Get a microscope view of your daily spending with the power of micro transaction tracking. Every penny spent is captured and recorded in real-time, giving you an in-depth understanding of your financial habits." title="Micro Track Transaction"/>
+                    <FeatureCard url={report} title="Visual Transaction History" desc="Visualize your transaction history like never before with graphical representation of your spending. See your financial journey come to life through interactive charts and graphs that clearly show where your money is going."/>
                 </div>
                 <div>
                     <div className='feature'>

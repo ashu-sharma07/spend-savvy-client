@@ -36,10 +36,15 @@ const style = {
 const DashBoardMain = () => {
     const navigate = useNavigate();
     const [open, setOpen] = useState(false);
-    const [name,setName] = useState('');
-    const [description,setDescription] = useState('');
-    const [amount,setAmount] = useState(0);
-    const [Date,setDate] = useState('');
+    const [name, setName] = useState('');
+    const [description, setDescription] = useState('');
+    const [amount, setAmount] = useState(0);
+    const [nameErr, setNameErr] = useState(false);
+    const [descErr, setDescErr] = useState(false);
+    const [amountErr, setAmountErr] = useState(false);
+    const [amountErr2, setAmountErr2] = useState(false);
+    const [dateErr, setDateErr] = useState(false);
+    const [Date, setDate] = useState('');
     const category = useRef();
     const tranType = useRef();
     const price = JSON.parse(localStorage.getItem("value"));
@@ -62,19 +67,46 @@ const DashBoardMain = () => {
         navigate("/");
         window.location.reload();
     }
-    const handleTrans = async()=>{
-        console.log(name,Date,category.current.value,tranType.current.value,description,amount)
-        if(name !== '' && Date !== '' && category.current.value !== null && tranType.current.value !== null && amount !== ''){
+    const handleTrans = async () => {
+        console.log(name, Date, category.current.value, tranType.current.value, description, amount)
+        setNameErr(false);
+        setAmountErr(false);
+        setDateErr(false);
+        setDescErr(false);
+        setAmountErr2(false);
+        if(name === '' && amount === 0 && Date === '' && description===''){
+            setNameErr(true);
+            setAmountErr(true);
+            setDateErr(true);
+            setDescErr(true);
+            // setAmountErr2(true);
+        }
+        if (name === '') {
+            setNameErr(true);
+        }
+        if (description === '') {
+            setDescErr(true);
+        }
+        if(amount === 0){
+            setAmountErr(true);
+        }
+        if(amount < 0){
+            setAmountErr2(true);
+        }
+        if (Date === '') {
+            setDateErr(true);
+        }
+        if (name !== '' && Date !== '' && category.current.value !== null && tranType.current.value !== null && amount !== 0) {
             try {
-                const res = await api.post("/transaction/new",{
+                const res = await api.post("/transaction/new", {
                     name,
                     description,
-                    amount : Number(amount),
+                    amount: Number(amount),
                     Date,
-                    category:category.current.value,
-                    tranType:tranType.current.value
+                    category: category.current.value,
+                    tranType: tranType.current.value
                 },
-                { headers: { token: token } }
+                    { headers: { token: token } }
                 )
                 console.log(res);
                 localStorage.removeItem("current")
@@ -92,10 +124,10 @@ const DashBoardMain = () => {
                 tranType.current.value = null;
                 window.location.reload();
             } catch (error) {
-                console.log('Ye error hai',error);
+                console.log('Ye error hai', error);
             }
         }
-        else{
+        else {
             console.log('hyee')
         }
     }
@@ -179,26 +211,31 @@ const DashBoardMain = () => {
                                 <div className='formDiv'>
                                     <label>Transaction Name</label>
                                     <br />
-                                    <input value={name} onChange={(e)=>setName(e.target.value)} className='formInput' type={"text"} />
+                                    <input value={name} onChange={(e) => setName(e.target.value)} className='formInput' type={"text"} />
+                                    {nameErr && <p style={{ color: 'red', marginBottom: -20 }}>Required*</p>}
                                 </div>
                                 <div className='formDiv'>
                                     <label>Description</label>
                                     <br />
-                                    <input value={description} onChange={(e)=>setDescription(e.target.value)} className='formInput' type={"text"} />
+                                    <input value={description} onChange={(e) => setDescription(e.target.value)} className='formInput' type={"text"} />
+                                    {descErr && <p style={{ color: 'red', marginBottom: -20 }}>Required*</p>}
                                 </div>
                                 <div className='formDiv'>
                                     <label>Amount</label>
                                     <br />
-                                    <input value={amount} onChange={(e)=>setAmount(e.target.value)} className='formInput' type={"number"} />
+                                    <input value={amount} onChange={(e) => setAmount(e.target.value)} className='formInput' type={"number"} />
+                                    {amountErr && <p style={{ color: 'red', marginBottom: -20 }}>Required*</p>}
+                                    {amountErr2 && <p style={{ color: 'red', marginBottom: -20 }}>Value should be positive</p>}
                                 </div>
                             </div>
-                            <div style={{ display: 'flex', gap: 10, marginTop: 10,width:'95%' }}>
+                            <div style={{ display: 'flex', gap: 10, marginTop: 10, width: '95%' }}>
                                 <div style={{ width: '75%', marginRight: 55 }} className='formDiv'>
                                     <label>Date</label>
                                     <br />
-                                    <input value={Date} onChange={(e)=>setDate(e.target.value)} className='formInput' style={{ width: '120%' }} type={"date"} />
+                                    <input value={Date} onChange={(e) => setDate(e.target.value)} className='formInput' style={{ width: '120%' }} type={"date"} />
+                                    {dateErr && <p style={{ color: 'red', marginBottom: -20 }}>Required*</p>}
                                 </div>
-                                <div className='label' style={{width:'100%'}}>
+                                <div className='label' style={{ width: '100%' }}>
                                     <label>Category</label>
                                     <br />
                                     <select ref={category} style={{ width: '100%' }} name="category" id="category">
@@ -212,7 +249,7 @@ const DashBoardMain = () => {
                                         <option value="Other">Others</option>
                                     </select>
                                 </div>
-                                <div className='label' style={{width:'100%'}}>
+                                <div className='label' style={{ width: '100%' }}>
                                     <label>Transaction Type</label>
                                     <br />
                                     <select ref={tranType} style={{ width: '100%' }} name="category" id="category">
