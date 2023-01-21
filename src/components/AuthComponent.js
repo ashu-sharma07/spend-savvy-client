@@ -14,6 +14,7 @@ const AuthComponent = ({
     email,
     setEmail,
     loginErr,
+    emailErr,
     loginErr2,
     registerErr,
     registerErr2,
@@ -50,6 +51,7 @@ const AuthComponent = ({
                         {loginErr && <p style={{ color: 'red', textAlign: 'center' }}>Invalid Username or password</p>}
                         {loginErr2 && <p style={{ color: 'red', textAlign: 'center' }}>Please enter email or password</p>}
                         {registerErr && <p style={{ color: 'red', textAlign: 'center' }}>Invalid Username or Password</p>}
+                        {emailErr && <p style={{ color: 'red', textAlign: 'center' }}>Please Enter correct Email</p>}
                         {registerErr2 && <p style={{ color: 'red', textAlign: 'center' }}>Please enter email or password</p>}
                         <button onClick={handleClick}>{title}</button>
                         <p style={account}>Don't have an account? <Link to={route}>{dont}</Link></p>
