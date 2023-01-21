@@ -60,6 +60,7 @@ const DashBoardMain = () => {
         localStorage.removeItem("expense");
         localStorage.removeItem("income");
         navigate("/");
+        window.location.reload();
     }
     const handleTrans = async()=>{
         console.log(name,Date,category.current.value,tranType.current.value,description,amount)
