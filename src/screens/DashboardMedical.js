@@ -31,8 +31,10 @@ const DashboardMedical = () => {
     const [val,setVal] = useState(0);
     const [open,setOpen] = useState(false);
     const handleClose = ()=>setOpen(false);
+    const [bmiErr,setBmiErr] = useState(false);
     const handleClick = async () => {
         setErr(false);
+        setBmiErr(false);
         console.log(Number(bmi.current.value))
         if (bmi.current.value !== '') {
             try {
@@ -53,6 +55,7 @@ const DashboardMedical = () => {
         }
         else{
             setErr(true);
+            setBmiErr(true);
             console.log("Please Enter your BMI")
         }
     }
@@ -86,6 +89,7 @@ const DashboardMedical = () => {
                                     <label>BMI</label>
                                     <br />
                                     <input ref={bmi} className='formInput' type={"number"} placeholder='Enter your BMI' />
+                                    {bmiErr&&<p style={{color:'red'}}>Required*</p>}
                                 </div>
                             </div>
                             <div className='label'>
@@ -117,7 +121,7 @@ const DashboardMedical = () => {
 
                             </div>
                         </div>
-                        {err&&<p style={{marginBottom:-30,color:'red'}}>Please enter your BMI</p>}
+                        {/* {err&&<p style={{marginBottom:-30,color:'red'}}>Please enter your BMI</p>} */}
                         <button onClick={handleClick} style={{ padding: '10px 30px' }} className='btn'>Next {'-->'}</button>
                     </div>
                 </div>

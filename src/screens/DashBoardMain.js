@@ -96,6 +96,9 @@ const DashBoardMain = () => {
         if (Date === '') {
             setDateErr(true);
         }
+        if(amount === 0){
+            setAmountErr(true);
+        }
         if (name !== '' && Date !== '' && category.current.value !== null && tranType.current.value !== null && amount !== 0) {
             try {
                 const res = await api.post("/transaction/new", {
