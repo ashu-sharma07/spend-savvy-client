@@ -90,6 +90,7 @@ const DashBoardMain = () => {
                 setDate('');
                 category.current.value = null;
                 tranType.current.value = null;
+                window.location.reload();
             } catch (error) {
                 console.log('Ye error hai',error);
             }

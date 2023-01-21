@@ -381,7 +381,7 @@ select{
 /* dashboard css start  */
 .dashHeader{
   background-color: white;
-  min-height:100vh;
+  min-height:120vh;
   width: 20vw;
   display: flex;
   flex-direction: column;
