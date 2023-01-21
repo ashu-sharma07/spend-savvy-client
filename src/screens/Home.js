@@ -42,7 +42,7 @@ const Home = () => {
                 <div>
                     <div className='cards'>
                         <Card url={one} txt={"100% Secured Data"} />
-                        <Card url={two} txt={"Friendly Users"} />
+                        <Card url={two} txt={"User Friendly"} />
                         <Card url={three} txt={"Reviews"} />
                         <Card url={four} txt={"ML"} />
                     </div>

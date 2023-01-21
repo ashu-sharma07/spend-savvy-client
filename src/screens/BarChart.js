@@ -57,7 +57,7 @@ const BarChart = (props) => {
 
         datasets: [
             {
-                // label: "Percentage Score",
+                label: "Transactions by category",
                 barThickness: 10,
                 backgroundColor: ['#4641A7'],
                 borderRadius: 10,

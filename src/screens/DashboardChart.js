@@ -59,6 +59,7 @@ const DashboardChart = () => {
             localStorage.setItem("expense", JSON.stringify(res.data.totalExpense))
             localStorage.setItem("income", JSON.stringify(res.data.totalIncome))
             setOpen(false);
+            window.location.reload();
         } catch (error) {
             console.log(error);
         }

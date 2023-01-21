@@ -33,14 +33,14 @@ const DashboardMedical = () => {
     const handleClose = ()=>setOpen(false);
     const handleClick = async () => {
         setErr(false);
-        console.log(bmi.current.value)
+        console.log(Number(bmi.current.value))
         if (bmi.current.value !== '') {
             try {
                 const res = await api.post("/medical", {
-                    age: age.current.value,
+                    age: Number(age.current.value),
                     sex: sex.current.value,
-                    bmi: bmi.current.value,
-                    children: children.current.value,
+                    bmi: Number(bmi.current.value),
+                    children: Number(children.current.value),
                     smoker: smoker.current.value,
                     region: region.current.value
                 }, { headers: { token: token } })

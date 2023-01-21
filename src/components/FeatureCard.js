@@ -8,8 +8,8 @@ const FeatureCard = ({ url, style }) => {
                     <img src={url} alt="card" />
                 </div>
                 <div>
-                    <h1>Lorem ipsum dolor sit</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h1>Track your transactions</h1>
+                    <p>"Track your transactions like a detective on the hunt for clues. Each purchase is a lead that, when pieced together, creates a clear picture of your financial behavior."</p>
                 </div>
             </div>
         </div>

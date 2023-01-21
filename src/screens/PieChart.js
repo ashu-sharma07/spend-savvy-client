@@ -31,8 +31,8 @@ const PieChart = (props) => {
                 <p>$120.32</p>
             </div> */}
             <div className="chartDiv">
-                <p style={{color:'#4641A7'}}>Total Income: {income}</p>
-                <p style={{color:'#F9CE68'}}>Total Expense: {expense}</p>
+                <p style={{color:'#4641A7'}}>Total Income: ₹ {income}</p>
+                <p style={{color:'#F9CE68'}}>Total Expense: ₹ {expense}</p>
             </div>
         </div>
     );
