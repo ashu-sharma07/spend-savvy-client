@@ -6,6 +6,7 @@ import product from "../assets/dashboard/product.svg"
 import { useLocation, useNavigate } from 'react-router-dom'
 import DashBoardMain from './DashBoardMain'
 import DashboardChart from './DashboardChart'
+import DashboardMedical from './DashboardMedical'
 const Dashboard = () => {
     const location = useLocation();
     const navigate = useNavigate();
@@ -24,9 +25,9 @@ const Dashboard = () => {
                             <img style={{ color: 'black' }} src={Chart} alt="Chart" />
                             <p style={{ color: 'black' }}>Transactions</p>
                         </div>
-                        <div className='nav'>
+                        <div onClick={() => navigate("/dashboard/medical")} className='nav'>
                             <img style={{ color: 'black' }} src={product} alt="product" />
-                            <p style={{ color: 'black' }}>Product</p>
+                            <p style={{ color: 'black' }}>Medical </p>
                         </div>
                     </div>
                 </header>
@@ -36,7 +37,11 @@ const Dashboard = () => {
                     ?
                     <DashBoardMain />
                     :
+                    location.pathname === '/dashboard/chart'
+                    ?
                     <DashboardChart />
+                    :
+                    <DashboardMedical/>
             }
 
         </div>

@@ -25,6 +25,7 @@ function App() {
         <Route path='/reset' element={<Reset/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/dashboard/chart' element={<Dashboard/>}/>
+        <Route path='/dashboard/medical' element={<Dashboard/>}/>
         <Route path='/form' element={<Form/>}/>
         <Route path='/chart' element={<BarChart/>}/>
       </Routes>

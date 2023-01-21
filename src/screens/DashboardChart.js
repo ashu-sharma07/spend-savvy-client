@@ -79,7 +79,7 @@ const DashboardChart = () => {
                                 <div onClick={() => handleClick(item._id)} key={key} style={{ background: '#F9FDFC', boxShadow: "2px 2px 10px rgb(0,0,0,0.2)", marginBottom: 10, borderRadius: 5, padding: 20, cursor: 'pointer' }}>
                                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                         <h3>{item.category}</h3>
-                                        <p>₹ {item.amount}</p>
+                                        {item.tranType === 'Income' ? <p style={{color:'green'}}>₹ {item.amount}</p>:<p style={{color:'red'}}>₹ {item.amount}</p>}
                                     </div>
                                     <div style={{ border: '1px solid #e5e5e5' }}></div>
                                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -103,12 +103,12 @@ const DashboardChart = () => {
                         <div style={{ display: 'flex', gap: '30px', flexDirection: 'column', justifyContent: 'space-between', width: '100%' }}>
                             <div style={{ display: 'flex', gap: 10, padding: '60px' }}>
                                 <div>
-                                    <h2>{transOne.category}</h2>
-                                    <h4>{transOne.name}</h4>
-                                    <p>{transOne.Date}</p>
-                                    <p>{transOne.tranType}</p>
-                                    <p>{transOne.description}</p>
-                                    <h1>₹ {transOne.amount}</h1>
+                                    <h2>Category: {transOne.category}</h2>
+                                    <h4>Transaction Name: {transOne.name}</h4>
+                                    <p>Date: {transOne.Date}</p>
+                                    <p>Transaction Type: {transOne.tranType}</p>
+                                    <p>Description: {transOne.description}</p>
+                                    { transOne.tranType === 'Income'? <h1 style={{color:'green'}}>Amount: ₹ {transOne.amount}</h1>:<h1 style={{color:'red'}}>Amount: ₹ {transOne.amount}</h1>}
                                 </div>
                                 <div style={{ position: 'absolute', bottom: 10, display: 'flex', gap: '10px', right: 40 }}>
                                     <button onClick={handleClose} style={{ padding: '10px 30px' }} className='btn2'>Cancel</button>

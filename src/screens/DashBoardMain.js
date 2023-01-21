@@ -204,10 +204,10 @@ const DashBoardMain = () => {
                                         <option value="Transport">Transport</option>
                                         <option value="Rentals">Rentals</option>
                                         <option value="Work">Work</option>
-                                        <option value="Pocket Money">Pocket Money</option>
+                                        <option value="PocketMoney">Pocket Money</option>
                                         <option value="Freelance">Freelance</option>
-                                        <option value="Internet Bills">Internet Bill</option>
-                                        <option value="Others">Others</option>
+                                        <option value="Internet">Internet Bill</option>
+                                        <option value="Other">Others</option>
                                     </select>
                                 </div>
                                 <div className='label' style={{width:'100%'}}>
