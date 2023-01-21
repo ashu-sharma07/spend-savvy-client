@@ -56,14 +56,14 @@ const Home = () => {
                     <div className='feature'>
                         <h1>Features our users love</h1>
                         <div className='mainCard'>
-                            <Feature url={one1} />
-                            <Feature url={two2} />
-                            <Feature url={three3} />
+                            <Feature url={one1} title="Accessibility" desc="You can login and track your budget from anywhere."/>
+                            <Feature url={two2} title="Monthly Tracking" desc="You can renew and compare your bills and transactions on a monthly basis." />
+                            <Feature url={three3} title="Emergency Funds" desc="Get a quick understanding of what amount is required in an emergency."/>
                         </div>
                         <div className='mainCard'>
-                            <Feature url={four4} />
-                            <Feature url={five5} />
-                            <Feature url={six6} />
+                            <Feature url={four4}title="Smart Budget" desc="Get exposed to AI powered help in managing your money." />
+                            <Feature url={five5} title="Lend and Track" desc=" Plan and List Money you lend or took as loan." />
+                            <Feature url={six6} title="Capture and Evolve" desc={"Get an understanding and get ahead with your money using the top of line AI powered User - experience."}/>
                         </div>
                     </div>
                 </div>
