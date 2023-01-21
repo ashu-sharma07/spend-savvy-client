@@ -18,11 +18,11 @@ const Dashboard = () => {
                     <div style={{ marginTop: 100 }} className='navDiv'>
                         <div onClick={() => navigate("/dashboard")} className='nav'>
                             <img style={{ color: 'black' }} src={Home} alt="Home" />
-                            <p style={{ color: '#2db84c' }}>Home</p>
+                            <p style={{ color: '#2db84c' }}>Dashboard</p>
                         </div>
                         <div onClick={() => navigate("/dashboard/chart")} className='nav'>
                             <img style={{ color: 'black' }} src={Chart} alt="Chart" />
-                            <p style={{ color: 'black' }}>Chart</p>
+                            <p style={{ color: 'black' }}>Transactions</p>
                         </div>
                         <div className='nav'>
                             <img style={{ color: 'black' }} src={product} alt="product" />

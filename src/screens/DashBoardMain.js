@@ -113,7 +113,7 @@ const DashBoardMain = () => {
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                     <div>
                         <div>
-                            <h2>Your credit card</h2>
+                            <h2>Your Budgets :</h2>
                             <div style={{ display: 'flex', gap: 30 }}>
                                 <div className='dashboardCard'>
                                     <p>Your Predicted Budget</p>
